@@ -1,0 +1,833 @@
+{
+	"info": {
+		"_postman_id": "00f0310a-215b-49c0-9147-f17f0d674c7c",
+		"name": "API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Huey Maverick\",\r\n    \"email\":\"hueymaverick12@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"birthyear\": \"1998\",\r\n    \"address\":\"\",\r\n    \"phoneNumber\":\"0966089315\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjUwMjA0ODl9.PiPSoIDHXwYOLAvDI5AUygDP8bP4ThMMOum2OiZtu98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"HueyMaverick\",\r\n    \"email\":\"hueymaverick12@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"birthyear\": \"1998\",\r\n    \"address\":\"Hanoi\",\r\n    \"phoneNumber\":\"0966089315\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/user/register/admin",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								"register",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjI2MjM3NDksImlhdCI6MTYyMjUzNzM0OSwic3ViIjoxLCJjbGFpbXMiOnsiZW1haWwiOiJoaWV1cWR0MTMxMkBnbWFpbC5jb20iLCJjcmVhdGVkQXQiOiIyMDIxLTA2LTAxVDA4OjQ5OjAyLjY0OVoifX0.r_OMGDC10gyomIuf7qubzrb2V5JWYgJw2B35SoE3Jo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"hueymaverick12@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"hieuqdt@vmodev.com\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGU1MWFmY2VhYzgwODA2MjhmYzI3MzIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU3MTc3MDh9.aHI_yj2aCmKp3aX-flCTFb9SyqM5Ej-Qs7kDDFZVFPk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"HieuQDT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/user/60d5888c89c73032a0e31716",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								"60d5888c89c73032a0e31716"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGU1MWFmY2VhYzgwODA2MjhmYzI3MzIiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU3MTc3MDh9.aHI_yj2aCmKp3aX-flCTFb9SyqM5Ej-Qs7kDDFZVFPk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1234/user/60d5888c89c73032a0e31716",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"user",
+								"60d5888c89c73032a0e31716"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQ4NzE2OTV9.DbVvYRzEwWjJ8lPdC9EyUlQ5T8gXgeSXM5X7HCy3eno",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Che cac loai\",\r\n    \"active\": true,\r\n    \"bannerImage\": \"www.picture.com/banner\",\r\n    \"index\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read list category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQ2OTE3NzZ9.7LUxsO30LmSTQMN3CdBWKKVls4duWi6lO_24Ah4NRAY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQ4NzE2OTV9.DbVvYRzEwWjJ8lPdC9EyUlQ5T8gXgeSXM5X7HCy3eno",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Che an\",\r\n    \"active\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/category/60d9931664cd943070eda1b8",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"category",
+								"60d9931664cd943070eda1b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQ4NzE2OTV9.DbVvYRzEwWjJ8lPdC9EyUlQ5T8gXgeSXM5X7HCy3eno",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Che an\",\r\n    \"active\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/category/60d9931664cd943070eda1b8",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"category",
+								"60d9931664cd943070eda1b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Create item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQ4NzA3NDl9.TDvc5w9mC0QWkJjh3wSHqN2W2l2o6hm08IU5J0Pb7I0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Thit Quay\",\r\n        \"barcode\": \"145678\",\r\n        \"inputPrice\": 20000,\r\n        \"salePrice\": 23000,\r\n        \"weight\": null,\r\n        \"avatar\": \"www.picture.com/avatar\",\r\n        \"detailAvatar\": \"www.picture.com/avatar_detail\",\r\n        \"itemDescription\": \"\",\r\n        \"stockAmount\": 50,\r\n        \"itemCategory\": \"Do an man\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/item",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read List item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/item/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjUxMDkxODJ9.hxW3lZbqWbWeYgQ0XFpEaW7uIsc5IZ7zkEJLce7siKg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stockAmount\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/item/60dd2875b06a6345985397b6",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"item",
+								"60dd2875b06a6345985397b6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU1MzY4ODJ9.bn2OKUuyZPXAxh9_n5ki7B7MM4NixY0qQqoCOWhZ1IY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1234/item/60e597f55e30ba174c1561b1",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"item",
+								"60e597f55e30ba174c1561b1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flash Sale",
+			"item": [
+				{
+					"name": "Create FSale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjUwNDg2NjZ9.MpJ6xwpRoy0E5ZZ6JCdkxC2bQmoOKd32nvEljyJEkHg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sale Che Thap Cam\",\r\n    \"startDate\": \"2021-07-06 10:40:00.000Z\",\r\n    \"endDate\": \"2021-07-08 09:41:00.000Z\",\r\n    \"itemID\": \"60d990dd04a328431cc0871f\",\r\n    \"percentDiscount\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/fsale",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"fsale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read List FS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/fsale/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"fsale",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Fsale",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU1NTQzNTh9.5Buwrz98pwpKX8fq1zi0T5Z8CvEAQp-evn8EQLG8RMM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sale Che Thap Cam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/fsale/60e26d643c87dd1934537e85",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"fsale",
+								"60e26d643c87dd1934537e85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Fsale",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjUxMjY1OTR9.gXLisliojrh92QWreESeCBrZpPSDIcKBQ6I1kmdTvt0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/fsale/60e3db85b2e51629b4bc8b4a",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"fsale",
+								"60e3db85b2e51629b4bc8b4a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voucher",
+			"item": [
+				{
+					"name": "Create Voucher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjUwMzU1MzR9.Pqtsat1cwV71aKRAsJ_AF1AgBezxHSk-oliwoY9E7p0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voucherName\": \"Voucher Che Thap Cam\",\r\n    \"percentDiscount\": 10,\r\n    \"endDate\": \"2021-07-09 04:28:00.000Z\",\r\n    \"itemID\": \"60d990dd04a328431cc0871f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/voucher",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"voucher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read list voucher",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voucherName\":\"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/voucher/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"voucher",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Voucher",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU1NTk3Nzl9.fh32XIz1uBsKcHVhgPVIfn3nnFjRjmGKUTuqrEFg7us",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"voucherName\": \"Voucher Che Thap Cam\",\r\n    \"percentDiscount\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/voucher/60dc2aa21eb4204d34122ed5",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"voucher",
+								"60dc2aa21eb4204d34122ed5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Voucher",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ1ODg4Yzg5YzczMDMyYTBlMzE3MTYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjU1NTkzNzR9.3K5DY8KpUKbowLbnyF2jb-3zX3kt3SLnj3WCiJHYabU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1234/voucher/60e4337737a40d44e097e06e",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"voucher",
+								"60e4337737a40d44e097e06e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userID\": \"60e51afceac8080628fc2732\",\r\n    \"orderContent\": [\r\n        {\r\n            \"id\": \"60dd2875b06a6345985397b6\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": \"60e5712c99ec743fbcffb513\",\r\n            \"quantity\": 2\r\n        }\r\n    ],\r\n    \"voucherName\": \"Voucher Che Thap Cam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/order",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/order/",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1234/order/60e527ed1bc9fc339cea4c71",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"order",
+								"60e527ed1bc9fc339cea4c71"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

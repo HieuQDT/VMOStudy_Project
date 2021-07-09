@@ -1,0 +1,1404 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "API TEST",
+    "contact": {}
+  },
+  "host": "localhost:1234",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user/register": {
+      "post": {
+        "summary": "Register",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Register",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/register/admin": {
+      "post": {
+        "summary": "Register admin",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Registeradmin",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisteradminRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "summary": "Login",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "Get user",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Getuser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/60d5888c89c73032a0e31716": {
+      "patch": {
+        "summary": "Update user",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Updateuser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateuserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete User",
+        "tags": [
+          "User"
+        ],
+        "operationId": "DeleteUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/category": {
+      "post": {
+        "summary": "Create category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Createcategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreatecategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Read list category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Readlistcategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/category/60d9931664cd943070eda1b8": {
+      "patch": {
+        "summary": "Update category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Updatecategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdatecategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete category",
+        "tags": [
+          "Category"
+        ],
+        "operationId": "Deletecategory",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/DeletecategoryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item": {
+      "post": {
+        "summary": "Create item",
+        "tags": [
+          "Item"
+        ],
+        "operationId": "Createitem",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateitemRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Read List item",
+        "tags": [
+          "Item"
+        ],
+        "operationId": "ReadListitem",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item/60dd2875b06a6345985397b6": {
+      "patch": {
+        "summary": "Update Item",
+        "tags": [
+          "Item"
+        ],
+        "operationId": "UpdateItem",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateItemRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item/60e597f55e30ba174c1561b1": {
+      "delete": {
+        "summary": "Delete item",
+        "tags": [
+          "Item"
+        ],
+        "operationId": "Deleteitem",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/fsale": {
+      "post": {
+        "summary": "Create FSale",
+        "tags": [
+          "Flash Sale"
+        ],
+        "operationId": "CreateFSale",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateFSaleRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Read List FS",
+        "tags": [
+          "Flash Sale"
+        ],
+        "operationId": "ReadListFS",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/fsale/60e26d643c87dd1934537e85": {
+      "patch": {
+        "summary": "Update Fsale",
+        "tags": [
+          "Flash Sale"
+        ],
+        "operationId": "UpdateFsale",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateFsaleRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/fsale/60e3db85b2e51629b4bc8b4a": {
+      "delete": {
+        "summary": "Delete Fsale",
+        "tags": [
+          "Flash Sale"
+        ],
+        "operationId": "DeleteFsale",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/voucher": {
+      "post": {
+        "summary": "Create Voucher",
+        "tags": [
+          "Voucher"
+        ],
+        "operationId": "CreateVoucher",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateVoucherRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Read list voucher",
+        "tags": [
+          "Voucher"
+        ],
+        "operationId": "Readlistvoucher",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/voucher/60dc2aa21eb4204d34122ed5": {
+      "patch": {
+        "summary": "Update Voucher",
+        "tags": [
+          "Voucher"
+        ],
+        "operationId": "UpdateVoucher",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateVoucherRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/voucher/60e4337737a40d44e097e06e": {
+      "delete": {
+        "summary": "Delete Voucher",
+        "tags": [
+          "Voucher"
+        ],
+        "operationId": "DeleteVoucher",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/order": {
+      "post": {
+        "summary": "Create order",
+        "tags": [
+          "Order"
+        ],
+        "operationId": "Createorder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateorderRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Order",
+        "tags": [
+          "Order"
+        ],
+        "operationId": "GetOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/order/60e527ed1bc9fc339cea4c71": {
+      "delete": {
+        "summary": "Delete Order",
+        "tags": [
+          "Order"
+        ],
+        "operationId": "DeleteOrder",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegisterRequest": {
+      "title": "RegisterRequest",
+      "example": {
+        "name": "Huey Maverick",
+        "email": "hueymaverick12@gmail.com",
+        "password": "1234",
+        "birthyear": "1998",
+        "address": "",
+        "phoneNumber": "0966089315",
+        "role": "admin"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "birthyear": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password",
+        "birthyear",
+        "address",
+        "phoneNumber",
+        "role"
+      ]
+    },
+    "RegisteradminRequest": {
+      "title": "RegisteradminRequest",
+      "example": {
+        "name": "HueyMaverick",
+        "email": "hueymaverick12@gmail.com",
+        "password": "1234",
+        "birthyear": "1998",
+        "address": "Hanoi",
+        "phoneNumber": "0966089315",
+        "role": "admin"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "birthyear": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password",
+        "birthyear",
+        "address",
+        "phoneNumber",
+        "role"
+      ]
+    },
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "email": "hueymaverick12@gmail.com",
+        "password": "1234"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "UpdateuserRequest": {
+      "title": "UpdateuserRequest",
+      "example": {
+        "name": "HieuQDT"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "CreatecategoryRequest": {
+      "title": "CreatecategoryRequest",
+      "example": {
+        "name": "Che cac loai",
+        "active": true,
+        "bannerImage": "www.picture.com/banner",
+        "index": 2
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "bannerImage": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "active",
+        "bannerImage",
+        "index"
+      ]
+    },
+    "UpdatecategoryRequest": {
+      "title": "UpdatecategoryRequest",
+      "example": {
+        "name": "Che an",
+        "active": false
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "active"
+      ]
+    },
+    "DeletecategoryRequest": {
+      "title": "DeletecategoryRequest",
+      "example": {
+        "name": "Che an",
+        "active": false
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "active"
+      ]
+    },
+    "CreateitemRequest": {
+      "title": "CreateitemRequest",
+      "example": {
+        "name": "Thit Quay",
+        "barcode": "145678",
+        "inputPrice": 20000,
+        "salePrice": 23000,
+        "weight": null,
+        "avatar": "www.picture.com/avatar",
+        "detailAvatar": "www.picture.com/avatar_detail",
+        "itemDescription": "",
+        "stockAmount": 50,
+        "itemCategory": "Do an man"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "barcode": {
+          "type": "string"
+        },
+        "inputPrice": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "salePrice": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "detailAvatar": {
+          "type": "string"
+        },
+        "itemDescription": {
+          "type": "string"
+        },
+        "stockAmount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "itemCategory": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "barcode",
+        "inputPrice",
+        "salePrice",
+        "weight",
+        "avatar",
+        "detailAvatar",
+        "itemDescription",
+        "stockAmount",
+        "itemCategory"
+      ]
+    },
+    "UpdateItemRequest": {
+      "title": "UpdateItemRequest",
+      "example": {
+        "stockAmount": 100
+      },
+      "type": "object",
+      "properties": {
+        "stockAmount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "stockAmount"
+      ]
+    },
+    "CreateFSaleRequest": {
+      "title": "CreateFSaleRequest",
+      "example": {
+        "name": "Sale Che Thap Cam",
+        "startDate": "2021-07-06 10:40:00.000Z",
+        "endDate": "2021-07-08 09:41:00.000Z",
+        "itemID": "60d990dd04a328431cc0871f",
+        "percentDiscount": 10
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "itemID": {
+          "type": "string"
+        },
+        "percentDiscount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "startDate",
+        "endDate",
+        "itemID",
+        "percentDiscount"
+      ]
+    },
+    "UpdateFsaleRequest": {
+      "title": "UpdateFsaleRequest",
+      "example": {
+        "name": "Sale Che Thap Cam"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "CreateVoucherRequest": {
+      "title": "CreateVoucherRequest",
+      "example": {
+        "voucherName": "Voucher Che Thap Cam",
+        "percentDiscount": 10,
+        "endDate": "2021-07-09 04:28:00.000Z",
+        "itemID": "60d990dd04a328431cc0871f"
+      },
+      "type": "object",
+      "properties": {
+        "voucherName": {
+          "type": "string"
+        },
+        "percentDiscount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "itemID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "voucherName",
+        "percentDiscount",
+        "endDate",
+        "itemID"
+      ]
+    },
+    "UpdateVoucherRequest": {
+      "title": "UpdateVoucherRequest",
+      "example": {
+        "voucherName": "Voucher Che Thap Cam",
+        "percentDiscount": 20
+      },
+      "type": "object",
+      "properties": {
+        "voucherName": {
+          "type": "string"
+        },
+        "percentDiscount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "voucherName",
+        "percentDiscount"
+      ]
+    },
+    "CreateorderRequest": {
+      "title": "CreateorderRequest",
+      "example": {
+        "userID": "60e51afceac8080628fc2732",
+        "orderContent": [
+          {
+            "id": "60dd2875b06a6345985397b6",
+            "quantity": 2
+          },
+          {
+            "id": "60e5712c99ec743fbcffb513",
+            "quantity": 2
+          }
+        ],
+        "voucherName": "Voucher Che Thap Cam"
+      },
+      "type": "object",
+      "properties": {
+        "userID": {
+          "type": "string"
+        },
+        "orderContent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderContent"
+          }
+        },
+        "voucherName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userID",
+        "orderContent",
+        "voucherName"
+      ]
+    },
+    "OrderContent": {
+      "title": "OrderContent",
+      "example": {
+        "id": "60dd2875b06a6345985397b6",
+        "quantity": 2
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id",
+        "quantity"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Category"
+    },
+    {
+      "name": "Item"
+    },
+    {
+      "name": "Flash Sale"
+    },
+    {
+      "name": "Voucher"
+    },
+    {
+      "name": "Order"
+    }
+  ]
+}
