@@ -194,6 +194,15 @@ const userUpdate = async (input, output) => {
         if (input.phoneNumber != null) {
             output.phoneNumber = input.phoneNumber;
         }
+        const {name, password, address, birthyear, phoneNumber } = input;
+        // SET RESULTS TO OUTPUT
+        output.name = name ? name : output.name;
+        output.password = password ? password : output.password;
+        output.address = address ? address : output.address;
+        output.birthyear = birthyear ? birthyear : output.birthyear;
+        output.phoneNumber = phoneNumber ? phoneNumber : output.phoneNumber;
+
+        // SAVE RESULTS
         const updatedUser = await output.save();
         return updatedUser;
     } catch (err) {

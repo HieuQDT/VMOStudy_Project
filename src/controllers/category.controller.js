@@ -7,7 +7,11 @@ const { categoryMessenge } = require('../utils/systemMessenge');
 ///////////////////////////////////// GET ALL CATEGORIES
 const categoryGetall = async (req, res) => {
     try {
-        const sortedPage = await services.categoryGetall(req.body.name, req.body.pageNumber, req.body.pageSize);
+        // CONVERT QUERY TO NUMBER
+        const pageNumberInput = req.query.pageNumber ? parseInt(req.query.pageNumber) : 1;
+        const pageSizeInput = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+        // SORTED PAGE
+        const sortedPage = await services.categoryGetall(req.query.name, pageNumberInput, pageSizeInput);
         res.status(200).json(sortedPage);
 
     } catch (err) {

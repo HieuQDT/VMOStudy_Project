@@ -60,36 +60,20 @@ const itemDelete = async (output) => {
 ///////////////////////////////////// UPDATE ITEM
 const itemUpdate = async (input, output) => {
     try {
-        if (input.name != null) {
-            output.name = input.name;
-        }
-        if (input.barcode != null) {
-            output.barcode = input.barcode;
-        }
-        if (input.inputPrice != null) {
-            output.inputPrice = input.inputPrice;
-        }
-        if (input.salePrice != null) {
-            output.salePrice = input.salePrice;
-        }
-        if (input.weight != null) {
-            output.weight = input.weight;
-        }
-        if (input.avatar != null) {
-            output.avatar = input.avatar;
-        }
-        if (input.detailAvatar != null) {
-            output.detailAvatar = input.detailAvatar;
-        }
-        if (input.itemDescription != null) {
-            output.itemDescription = input.itemDescription;
-        }
-        if (input.stockAmount != null) {
-            output.stockAmount = input.stockAmount;
-        }
-        if (input.itemCategory != null) {
-            output.itemCategory = input.itemCategory;
-        }
+        const { name, barcode, inputPrice, salePrice, weight, avatar, detailAvatar, itemDescription, stockAmount, itemCategory } = input;
+        // SET RESULTS TO OUTPUT
+        output.name = name ? name : output.name;
+        output.barcode = barcode ? barcode : output.barcode;
+        output.inputPrice = inputPrice ? inputPrice : output.inputPrice;
+        output.salePrice = salePrice ? salePrice : output.salePrice;
+        output.weight = weight ? weight : output.weight;
+        output.avatar = avatar ? avatar : output.avatar;
+        output.detailAvatar = detailAvatar ? detailAvatar : output.detailAvatar;
+        output.itemDescription = itemDescription ? itemDescription : output.itemDescription;
+        output.stockAmount = stockAmount ? stockAmount : output.stockAmount;
+        output.itemCategory = itemCategory ? itemCategory : output.itemCategory;
+
+        // SAVE RESULTS
         const updatedItem = await output.save();
         return updatedItem;
     } catch (err) {

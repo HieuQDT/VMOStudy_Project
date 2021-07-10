@@ -28,7 +28,11 @@ const orderCreate = async (req, res) => {
 ///////////////////////////////////// GET ALL ORDER
 const orderGetall = async (req, res) => {
     try {
-        const sortedPage = await services.orderGetall(req.body.orderID, req.body.pageNumber, req.body.pageSize);
+        // CONVERT QUERY TO NUMBER
+        const pageNumberInput = req.query.pageNumber ? parseInt(req.query.pageNumber) : 1;
+        const pageSizeInput = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+        // SORTED PAGE
+        const sortedPage = await services.orderGetall(req.query.orderID, pageNumberInput, pageSizeInput);
         res.status(200).json(sortedPage);
     } catch (err) {
         res.status(500).json({ messenge: orderMessenge.unexpectedErr });

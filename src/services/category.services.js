@@ -63,18 +63,14 @@ const categoryDelete = async (output) => {
 ///////////////////////////////////// UPDATE CATEGORY
 const categoryUpdate = async (input, output) => {
     try {
-        if (input.name != null) {
-            output.name = input.name;
-        }
-        if (input.active != null) {
-            output.active = input.active;
-        }
-        if (input.bannerImage != null) {
-            output.bannerImage = input.bannerImage;
-        }
-        if (input.index != null) {
-            output.index = input.index;
-        }
+        const {name, active, bannerImage, index } = input;
+        // SET RESULTS TO OUTPUT
+        output.name = name ? name : output.name;
+        output.active = active ? active : output.active;
+        output.bannerImage = bannerImage ? bannerImage : output.bannerImage;
+        output.index = index ? index : output.index;
+
+        // SAVE RESULTS
         const updatedCategory = await output.save();
         return updatedCategory;
     } catch (err) {

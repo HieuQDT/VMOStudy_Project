@@ -1,12 +1,12 @@
-const { isNumber } = require('lodash');
+// const { isNull } = require('lodash');
 const { pageSortMess } = require('../utils/systemMessenge');
 
 const pageSort = (array, pageNumber, pageSize) => {
 
     // VALIDATE PAGE & CALCULATION
-    if (!(isNumber(pageNumber)) && !(isNumber(pageSize))) return {messenge: pageSortMess.emptyBody};
-    if (!(isNumber(pageNumber))) return { messenge: pageSortMess.invalidNumber };
-    if (!(isNumber(pageSize))) return { messenge: pageSortMess.invalidSize };
+    if ((isNaN(pageNumber)) && (isNaN(pageSize))) return {messenge: pageSortMess.invalidParam};
+    if ((isNaN(pageNumber))) return { messenge: pageSortMess.invalidNumber };
+    if ((isNaN(pageSize))) return { messenge: pageSortMess.invalidSize };
     if (pageNumber <= 0 || pageSize <= 0) return { messenge: pageSortMess.zeroNumber };
 
     // CALCULATE TOTAL PAGE

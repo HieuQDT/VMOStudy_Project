@@ -1,9 +1,9 @@
 
 /////////////////////////////////////// MIDDLEWARE & VALIDATION MESSENGES
 const pageSortMess = {
-    emptyBody: {
-        messengeCode: 'EMPTY_BODY',
-        messenge: 'Empty required field(s)',
+    invalidParam: {
+        messengeCode: 'INVALID_PARAMS',
+        messenge: 'Input params are invalid',
     },
     zeroNumber: {
         messengeCode: 'ZERO_NUMBER',

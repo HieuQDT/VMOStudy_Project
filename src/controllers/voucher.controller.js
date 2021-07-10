@@ -8,7 +8,11 @@ const { voucherMessenge } = require('../utils/systemMessenge');
 ///////////////////////////////////// GET ALL VOUCHERS
 const voucherGetall = async (req, res) => {
     try {
-        const sortedPage = await services.voucherGetall(req.body.voucherName, req.body.pageNumber, req.body.pageSize);
+        // CONVERT QUERY TO NUMBER
+        const pageNumberInput = req.query.pageNumber ? parseInt(req.query.pageNumber) : 1;
+        const pageSizeInput = req.query.pageSize ? parseInt(req.query.pageSize) : 10;
+        // SORTED PAGE
+        const sortedPage = await services.voucherGetall(req.query.voucherName, pageNumberInput, pageSizeInput);
         res.status(200).json(sortedPage);
 
     } catch (err) {
