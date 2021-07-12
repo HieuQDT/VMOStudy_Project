@@ -154,6 +154,36 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           }
         ],
         "responses": {
@@ -164,7 +194,7 @@
         }
       }
     },
-    "/user/60d5888c89c73032a0e31716": {
+    "/user/60e6a2a1417bba20e442d5df": {
       "patch": {
         "summary": "Update user",
         "tags": [
@@ -206,7 +236,9 @@
             "headers": {}
           }
         }
-      },
+      }
+    },
+    "/user/60d5888c89c73032a0e31716": {
       "delete": {
         "summary": "Delete User",
         "tags": [
@@ -301,6 +333,29 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           },
           {
             "name": "auth-token",
@@ -464,6 +519,29 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           }
         ],
         "responses": {
@@ -613,6 +691,29 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           }
         ],
         "responses": {
@@ -762,6 +863,29 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "voucherName",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           }
         ],
         "responses": {
@@ -904,6 +1028,29 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
           }
         ],
         "responses": {
@@ -992,8 +1139,8 @@
     "RegisteradminRequest": {
       "title": "RegisteradminRequest",
       "example": {
-        "name": "HueyMaverick",
-        "email": "hueymaverick12@gmail.com",
+        "name": "HieuQDT",
+        "email": "hieuqdt1312@gmail.com",
         "password": "1234",
         "birthyear": "1998",
         "address": "Hanoi",
@@ -1037,7 +1184,7 @@
     "LoginRequest": {
       "title": "LoginRequest",
       "example": {
-        "email": "hueymaverick12@gmail.com",
+        "email": "hieuqdt1312@gmail.com",
         "password": "1234"
       },
       "type": "object",
@@ -1057,16 +1204,16 @@
     "UpdateuserRequest": {
       "title": "UpdateuserRequest",
       "example": {
-        "name": "HieuQDT"
+        "password": "1234"
       },
       "type": "object",
       "properties": {
-        "name": {
+        "password": {
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "password"
       ]
     },
     "CreatecategoryRequest": {

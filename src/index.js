@@ -40,3 +40,8 @@ app.use('/user', userRouter);
 app.use('/fsale', fsaleRouter);
 app.use('/voucher', voucherRouter);
 app.use('/order', orderRouter);
+
+// swagger set up 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../API_TEST/API TEST.postman_collection.json-Swagger20.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

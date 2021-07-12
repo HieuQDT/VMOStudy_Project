@@ -49,7 +49,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"HueyMaverick\",\r\n    \"email\":\"hueymaverick12@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"birthyear\": \"1998\",\r\n    \"address\":\"Hanoi\",\r\n    \"phoneNumber\":\"0966089315\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"name\":\"HieuQDT\",\r\n    \"email\":\"hieuqdt1312@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"birthyear\": \"1998\",\r\n    \"address\":\"Hanoi\",\r\n    \"phoneNumber\":\"0966089315\",\r\n    \"role\": \"admin\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -88,7 +88,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"hueymaverick12@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"raw": "{\r\n    \"email\":\"hieuqdt1312@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,23 +111,11 @@
 				},
 				{
 					"name": "Get user",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"hieuqdt@vmodev.com\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/user/",
+							"raw": "localhost:1234/user/?name=&email&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -135,6 +123,24 @@
 							"path": [
 								"user",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "email",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -153,7 +159,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"HieuQDT\"\r\n}",
+							"raw": "{\r\n    \"password\":\"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -161,14 +167,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:1234/user/60d5888c89c73032a0e31716",
+							"raw": "localhost:1234/user/60e6a2a1417bba20e442d5df",
 							"host": [
 								"localhost"
 							],
 							"port": "1234",
 							"path": [
 								"user",
-								"60d5888c89c73032a0e31716"
+								"60e6a2a1417bba20e442d5df"
 							]
 						}
 					},
@@ -240,9 +246,6 @@
 				},
 				{
 					"name": "Read list category",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -252,17 +255,8 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/category/",
+							"raw": "localhost:1234/category/?name&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -270,6 +264,20 @@
 							"path": [
 								"category",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -383,23 +391,11 @@
 				},
 				{
 					"name": "Read List item",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/item/",
+							"raw": "localhost:1234/item/?name&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -407,6 +403,20 @@
 							"path": [
 								"item",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -511,23 +521,11 @@
 				},
 				{
 					"name": "Read List FS",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/fsale/",
+							"raw": "localhost:1234/fsale/?name&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -535,6 +533,20 @@
 							"path": [
 								"fsale",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -648,23 +660,11 @@
 				},
 				{
 					"name": "Read list voucher",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"voucherName\":\"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 3\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/voucher/",
+							"raw": "localhost:1234/voucher/?voucherName&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -672,6 +672,20 @@
 							"path": [
 								"voucher",
 								""
+							],
+							"query": [
+								{
+									"key": "voucherName",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -770,23 +784,11 @@
 				},
 				{
 					"name": "Get Order",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"orderID\": \"\",\r\n    \"pageNumber\": 1,\r\n    \"pageSize\": 10\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "localhost:1234/order/",
+							"raw": "localhost:1234/order/?orderID&pageNumber=1&pageSize=10",
 							"host": [
 								"localhost"
 							],
@@ -794,6 +796,20 @@
 							"path": [
 								"order",
 								""
+							],
+							"query": [
+								{
+									"key": "orderID",
+									"value": null
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
 							]
 						}
 					},
