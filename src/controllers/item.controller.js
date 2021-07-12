@@ -29,7 +29,8 @@ const itemCreate = async (req, res) => {
 
         // CHECK IF ITEM EXIST IN DATABASE
         const itemExist = await Item.findOne({ name: req.body.name });
-        if (itemExist) return res.status(400).json({ messenge: itemMessenge.alreadyExist });
+        const barcodeExist = await Item.findOne({ barcode: req.body.barcode });
+        if (itemExist || barcodeExist) return res.status(400).json({ messenge: itemMessenge.alreadyExist });
 
         // CHECK CATEGORY
         if (req.body.itemCategory) {

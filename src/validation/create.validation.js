@@ -58,7 +58,7 @@ const voucherValidation = (data) => {
 /////////////////////////////////////// ORDER CREATE VALIDATION
 const orderValidation = (data) => {
     const schema = {
-        userID: Joi.string(),
+        userID: Joi.string().allow(null, ''),
         orderContent: Joi.array().required(),
         voucherName: Joi.string().allow(null, ''),
         date: Joi.date(),

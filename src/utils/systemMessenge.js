@@ -61,7 +61,7 @@ const itemMessenge = {
     },
     alreadyExist: {
         messengeCode: 'ALREADY_EXIST_ITEM',
-        messenge: 'Item already exist',
+        messenge: 'Item or Barcode already exist',
     },
     invalidCategory: {
         messengeCode: 'INVALID_CATEGORY',
@@ -93,6 +93,10 @@ const fsaleMessenge = {
     pastStartDate: {
         messengeCode: 'PAST_START_DATE',
         messenge: 'startDate must be later than current time',
+    },
+    findNoItem: {
+        messengeCode: 'FIND_NO_ITEM',
+        messenge: 'There is no item to apply flash sale',
     },
     successCreate: {
         messengeCode: 'SUCCESS_CREATE_FSALE',
@@ -147,6 +151,10 @@ const orderMessenge = {
     findNoItem: {
         messengeCode: 'FIND_NO_ITEM',
         messenge: 'Item not found',
+    },
+    findNoUser: {
+        messengeCode: 'FIND_NO_USER',
+        messenge: 'User not found',
     },
     outOfStock: {
         messengeCode: 'OUT_OF_STOCK',

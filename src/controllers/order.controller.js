@@ -1,11 +1,8 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable eqeqeq */
-// const Order = require('../models/order');
-// const Item = require('../models/item');
-// const voucher = require('../models/voucher');
-// const fsale = require('../models/flashSale');
 const validation = require('../validation/create.validation');
 const services = require('../services/order.services');
+const User = require('../models/user');
 const { orderMessenge } = require('../utils/systemMessenge');
 
 ///////////////////////////////////// CREATE ORDER
@@ -14,6 +11,13 @@ const orderCreate = async (req, res) => {
         // VALIDATE DATA
         const { error } = validation.orderValidation(req.body);
         if (error) return res.status(400).json({ err: error.details[0].message });
+
+        // VALIDATE USER ID
+        if (req.body.userID) {
+            const userGet = await User.findOne({ '_id': { $eq: req.body.userID } });
+            if (!userGet) return res.status(400).json({ messenge: orderMessenge.findNoUser });
+        }
+
         // CREATE ORDER
         const newOrder = await services.orderCreate(req, res);
         res.status(201).json({

@@ -97,7 +97,7 @@ const orderCreate = async (req, res) => {
         const order = new Order({
             orderContent: req.body.orderContent,
             totalPrice: finalPrice,
-            userID: req.body.userID,
+            // userID: req.body.userID,
         });
         const newOrder = await order.save();
         return newOrder;

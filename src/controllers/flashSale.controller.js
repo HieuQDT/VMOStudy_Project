@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 const flashSale = require('../models/flashSale');
+const Item = require('../models/item');
 const validation = require('../validation/create.validation');
 const services = require('../services/fsale.services');
 const { fsaleMessenge } = require('../utils/systemMessenge');
@@ -50,6 +51,10 @@ const fsaleCreate = async (req, res) => {
             ],
         });
         if (fsaleExist) return res.status(400).json({ messenge: fsaleMessenge.alreadyExist });
+
+        // CHECK ITEM ID 
+        const itemGet = await Item.findOne({ '_id': { $eq: req.body.itemID } });
+        if (!itemGet) return res.status(400).json({ messenge: fsaleMessenge.findNoItem });
 
         // CREATE ITEM
         const newFsale = await services.fsaleCreate(req.body);
