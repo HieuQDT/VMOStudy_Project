@@ -3,6 +3,7 @@ const Category = require('../models/category');
 const validation = require('../validation/create.validation');
 const services = require('../services/category.services');
 const { categoryMessenge } = require('../utils/systemMessenge');
+const logger = require('../config/logger');
 
 ///////////////////////////////////// GET ALL CATEGORIES
 const categoryGetall = async (req, res) => {
@@ -15,6 +16,7 @@ const categoryGetall = async (req, res) => {
         res.status(200).json(sortedPage);
 
     } catch (err) {
+        logger.error(err);
         res.status(500).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };
@@ -37,6 +39,7 @@ const categoryCreate = async (req, res) => {
             newCategory,
         });
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };
@@ -47,6 +50,7 @@ const categoryDelete = async (req, res) => {
         await services.categoryDelete(res.category);
         res.status(200).json({ messenge: categoryMessenge.successDeleted });
     } catch (err) {
+        logger.error(err);
         res.status(500).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };
@@ -60,6 +64,7 @@ const categoryUpdate = async (req, res) => {
             updatedCategory,
         });
     } catch (err) {
+        logger.error(err);
         res.status(400).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };

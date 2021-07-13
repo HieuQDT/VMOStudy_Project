@@ -3,6 +3,7 @@ const Category = require('../models/category');
 const Item = require('../models/item');
 const _ = require('lodash');
 const pageSortMiddleware = require('../middlewares/pageSort');
+const logger = require('../config/logger');
 
 ///////////////////////////////////// GET CATEGORY
 const categoryGetall = async (name, pageNumber, pageSize) => {
@@ -29,6 +30,7 @@ const categoryGetall = async (name, pageNumber, pageSize) => {
         return sortedPage;
 
     } catch (err) {
+        logger.error(err);
         throw Error('Unexpected error');
     }
 };
@@ -46,6 +48,7 @@ const categoryCreate = async (object) => {
         const newCategory = await category.save();
         return newCategory;
     } catch (err) {
+        logger.error(err);
         throw Error('Unexpected error');
     }
 };
@@ -56,6 +59,7 @@ const categoryDelete = async (output) => {
         const deletedCategory = await output.remove();
         return deletedCategory;
     } catch (err) {
+        logger.error(err);
         throw Error('Unexpected error');
     }
 };
@@ -63,7 +67,7 @@ const categoryDelete = async (output) => {
 ///////////////////////////////////// UPDATE CATEGORY
 const categoryUpdate = async (input, output) => {
     try {
-        const {name, active, bannerImage, index } = input;
+        const { name, active, bannerImage, index } = input;
         // SET RESULTS TO OUTPUT
         output.name = name ? name : output.name;
         output.active = active ? active : output.active;
@@ -74,6 +78,7 @@ const categoryUpdate = async (input, output) => {
         const updatedCategory = await output.save();
         return updatedCategory;
     } catch (err) {
+        logger.error(err);
         throw Error('Unexpected error');
     }
 };

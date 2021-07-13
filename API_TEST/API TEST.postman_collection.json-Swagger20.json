@@ -356,13 +356,6 @@
             "type": "integer",
             "format": "int32",
             "description": ""
-          },
-          {
-            "name": "auth-token",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
           }
         ],
         "responses": {
@@ -552,7 +545,7 @@
         }
       }
     },
-    "/item/60dd2875b06a6345985397b6": {
+    "/item/60ebb6219cd1f334e860bc40": {
       "patch": {
         "summary": "Update Item",
         "tags": [
