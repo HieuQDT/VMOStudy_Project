@@ -46,7 +46,7 @@ const itemCreate = async (req, res) => {
         });
 
     } catch (err) {
-        res.status(400).json({ messenge: itemMessenge.unexpectedErr });
+        res.status(500).json({ messenge: itemMessenge.unexpectedErr });
     }
 };
 
@@ -74,7 +74,7 @@ const itemUpdate = async (req, res) => {
             updatedItem,
         });
     } catch (err) {
-        res.status(400).json({ messenge: itemMessenge.unexpectedErr });
+        res.status(500).json({ messenge: itemMessenge.unexpectedErr });
     }
 };
 

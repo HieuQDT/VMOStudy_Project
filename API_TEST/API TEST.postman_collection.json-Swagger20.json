@@ -337,7 +337,7 @@
           {
             "name": "name",
             "in": "query",
-            "required": true,
+            "required": false,
             "type": "string",
             "description": ""
           },
@@ -516,7 +516,7 @@
           {
             "name": "name",
             "in": "query",
-            "required": true,
+            "required": false,
             "type": "string",
             "description": ""
           },
@@ -688,7 +688,7 @@
           {
             "name": "name",
             "in": "query",
-            "required": true,
+            "required": false,
             "type": "string",
             "description": ""
           },
@@ -860,7 +860,7 @@
           {
             "name": "voucherName",
             "in": "query",
-            "required": true,
+            "required": false,
             "type": "string",
             "description": ""
           },
@@ -1025,7 +1025,7 @@
           {
             "name": "orderID",
             "in": "query",
-            "required": true,
+            "required": false,
             "type": "string",
             "description": ""
           },
@@ -1072,6 +1072,13 @@
             "required": false,
             "default": "Bearer {token}",
             "type": "string"
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
           }
         ],
         "responses": {

@@ -1,2 +1,4 @@
 .env
 node_modules
+src/test/category.controller.test.js
+src/test/user.controller.test.js

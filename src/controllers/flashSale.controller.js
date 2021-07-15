@@ -67,7 +67,7 @@ const fsaleCreate = async (req, res) => {
         });
 
     } catch (err) {
-        res.status(400).json({ messenge: fsaleMessenge.unexpectedErr });
+        res.status(500).json({ messenge: fsaleMessenge.unexpectedErr });
     }
 };
 
@@ -90,7 +90,7 @@ const fsaleUpdate = async (req, res) => {
             updatedFsale,
         });
     } catch (err) {
-        res.status(400).json({ messenge: fsaleMessenge.unexpectedErr });
+        res.status(500).json({ messenge: fsaleMessenge.unexpectedErr });
     }
 };
 

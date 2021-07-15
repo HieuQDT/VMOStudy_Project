@@ -26,7 +26,7 @@ const userCreate = async (req, res) => {
         });
 
     } catch (err) {
-        res.status(400).json({ messenge: userMessenge.unexpectedErr });
+        res.status(500).json({ messenge: userMessenge.unexpectedErr });
     }
 };
 
@@ -52,7 +52,7 @@ const adminCreate = async (req, res) => {
         });
 
     } catch (err) {
-        res.status(400).json({ messenge: userMessenge.unexpectedErr });
+        res.status(500).json({ messenge: userMessenge.unexpectedErr });
     }
 };
 
@@ -111,7 +111,7 @@ const userUpdate = async (req, res) => {
             updatedUser,
         });
     } catch (err) {
-        res.status(400).json({ messenge: userMessenge.unexpectedErr });
+        res.status(500).json({ messenge: userMessenge.unexpectedErr });
     }
 };
 

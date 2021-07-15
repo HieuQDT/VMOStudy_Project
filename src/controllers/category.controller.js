@@ -40,7 +40,7 @@ const categoryCreate = async (req, res) => {
         });
     } catch (err) {
         logger.error(err);
-        res.status(400).json({ messenge: categoryMessenge.unexpectedErr });
+        res.status(500).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };
 
@@ -65,7 +65,7 @@ const categoryUpdate = async (req, res) => {
         });
     } catch (err) {
         logger.error(err);
-        res.status(400).json({ messenge: categoryMessenge.unexpectedErr });
+        res.status(500).json({ messenge: categoryMessenge.unexpectedErr });
     }
 };
 

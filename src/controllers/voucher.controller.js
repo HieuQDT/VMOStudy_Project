@@ -41,7 +41,7 @@ const voucherCreate = async (req, res) => {
             newVoucher,
         });
     } catch (err) {
-        res.status(400).json({ messenge: voucherMessenge.unexpectedErr });
+        res.status(500).json({ messenge: voucherMessenge.unexpectedErr });
     }
 };
 
@@ -64,7 +64,7 @@ const voucherUpdate = async (req, res) => {
             updatedVoucher,
         });
     } catch (err) {
-        res.status(400).json({ messenge: voucherMessenge.unexpectedErr });
+        res.status(500).json({ messenge: voucherMessenge.unexpectedErr });
     }
 };
 

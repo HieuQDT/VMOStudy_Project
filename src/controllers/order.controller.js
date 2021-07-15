@@ -25,7 +25,7 @@ const orderCreate = async (req, res) => {
             newOrder,
         });
     } catch (err) {
-        res.status(400).json({ messenge: orderMessenge.unexpectedErr });
+        res.status(500).json({ messenge: orderMessenge.unexpectedErr });
     }
 };
 
